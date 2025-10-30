@@ -1,0 +1,4 @@
+const opitions = {
+    method: "Get",
+
+}
