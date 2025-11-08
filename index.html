@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
-     <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet"
@@ -14,93 +14,75 @@
 </head>
 
 <body>
-
     <main class="main-container">
-
-        <header class="input-conatiner">
-            <input class="city-input" placeholder="Search City" type="text" name="">
+        <header class="input-container">
+            <input class="city-input" placeholder="Search City" type="text">
             <button class="search-btn">
-                <span class="material-symbols-outlined">
-                    search
-                </span>
+                <span class="material-symbols-outlined">search</span>
             </button>
         </header>
-        <section class="Weather-info" style="display: none;">
+
+        <!-- Weather Info -->
+        <section class="weather-info" style="display: none;">
             <div class="location-date-container">
                 <div class="location">
-                    <span><img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt=""></span>
+                    <img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="location icon">
                     <h4 class="country-txt">Jakarta</h4>
                 </div>
-                <h5 class="current-date-txt regular-text ">Wed,5 November</h5>
+                <h5 class="current-date-txt regular-text">Wed, 5 November</h5>
             </div>
-            <div class="weather-summary-container">
-                <img src="img/cloud.png" class="weather-summary-img">
 
+            <div class="weather-summary-container">
+                <img src="img/cloud.png" class="weather-summary-img" alt="Weather icon">
                 <div class="weather-summary-info">
-                    <h1 class="temp-txt">29 ℃</h1>
+                    <h1 class="temp-txt">29℃</h1>
                     <h3 class="condition-txt regular-text">Clouds</h3>
                 </div>
             </div>
+
             <div class="weather-condition-container">
                 <div class="condition-info">
-                    <img src="img/waterDropIcon.png" alt="" style="width: 30px;">
+                    <img src="img/waterDropIcon.png" alt="Humidity icon" style="width: 30px;">
                     <div class="condition-item">
-                        <h5 class="regular-text">humidity</h5>
+                        <h5 class="regular-text">Humidity</h5>
                         <h5 class="humidity-value-text">55%</h5>
                     </div>
                 </div>
 
                 <div class="condition-info">
-                    <img src="img/airIcon.png" alt="" style="width: 30px;">
+                    <img src="img/airIcon.png" alt="Wind icon" style="width: 30px;">
                     <div class="condition-item">
                         <h5 class="regular-text">Wind Speed</h5>
                         <h5 class="wind-value-text">2 m/s</h5>
                     </div>
                 </div>
             </div>
+
             <div class="forecast-item-container">
-                <div class="forecast-item">
-                    <h5 class="forecast-item-date regular-text">10 nov</h5>
-                    <img src="img/thunder strom.png" alt="" class="forecast-item-img">
-                    <h5 class="forecast-item-temp">29℃</h5>
-                </div>
-                <div class="forecast-item">
-                    <h5 class="forecast-item-date regular-text">10 nov</h5>
-                    <img src="img/thunder strom.png" alt="" class="forecast-item-img">
-                    <h5 class="forecast-item-temp">29℃</h5>
-                </div><div class="forecast-item">
-                    <h5 class="forecast-item-date regular-text">10 nov</h5>
-                    <img src="img/thunder strom.png" alt="" class="forecast-item-img">
-                    <h5 class="forecast-item-temp">29℃</h5>
-                </div><div class="forecast-item">
-                    <h5 class="forecast-item-date regular-text">10 nov</h5>
-                    <img src="img/thunder strom.png" alt="" class="forecast-item-img">
-                    <h5 class="forecast-item-temp">29℃</h5>
-                </div>
+                <!-- JS dynamically injects forecast items -->
             </div>
         </section>
-        <section class="search-city section-message" >
-            <img  src="img/searchImage-removebg-preview.png" alt="">
+
+        <!-- Search Message -->
+        <section class="search-city section-message">
+            <img src="img/searchImage-removebg-preview.png" alt="Search Image">
             <div>
                 <h1>Search City</h1>
-                <h4 class="regular-text">
-                    Find out the Weather condition of the city
-                </h4>
+                <h4 class="regular-text">Find out the weather condition of the city</h4>
             </div>
-        </section> 
-           <section class="not-found section-message" style="display: none;">
-            <img  src="img/error-removebg-preview.png" alt="">
+        </section>
+
+        <!-- Not Found Message -->
+        <section class="not-found section-message" style="display: none;">
+            <img src="img/error-removebg-preview.png" alt="Error Image">
             <div>
-                <h1 style="font-weight: 400;">City not founded!</h1>
-                <h4 class="regular-text">
-                    Find out the Weather condition of an other city
-                </h4>
+                <h1 style="font-weight: 400;">City not found!</h1>
+                <h4 class="regular-text">Try searching for another city</h4>
             </div>
         </section>
     </main>
 
 
-   
 </body>
-
+ <script src="script.js"></script>
 </html>
