@@ -6,197 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+     <script src="script.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
-            <a class="navbar-brand" href="#" style="font-size: 24px;">Weather App </a><img src="weatherImg3.jpg" alt=""
-                style="width:70px;height: 70px;border-radius: 30px;">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+    <main class="main-container">
+
+        <header class="input-conatiner">
+            <input class="city-input" placeholder="Search City" type="text" name="">
+            <button class="search-btn">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 150px;">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><strong>About us</strong></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <strong>How to use ?</strong></a>
-                    </li>
-
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+        </header>
+        <section class="Weather-info" style="display: none;">
+            <div class="location-date-container">
+                <div class="location">
+                    <span><img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt=""></span>
+                    <h4 class="country-txt">Jakarta</h4>
+                </div>
+                <h5 class="current-date-txt regular-text ">Wed,5 November</h5>
             </div>
-        </div>
-    </nav>
+            <div class="weather-summary-container">
+                <img src="img/cloud.png" class="weather-summary-img">
 
-    <div class="container" style="margin: auto;display: block; margin-top: 40px ;">
-        <main>
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm">
-                        <div class="card-header py-3">
-                            <h4 class="my-0 fw-normal">Free</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$0<small
-                                    class="text-body-secondary fw-light">/mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>10 users included</li>
-                                <li>2 GB of storage</li>
-                                <li>Email support</li>
-                                <li>Help center access</li>
-                            </ul> <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for
-                                free</button>
-                        </div>
+                <div class="weather-summary-info">
+                    <h1 class="temp-txt">29 ℃</h1>
+                    <h3 class="condition-txt regular-text">Clouds</h3>
+                </div>
+            </div>
+            <div class="weather-condition-container">
+                <div class="condition-info">
+                    <img src="img/waterDropIcon.png" alt="" style="width: 30px;">
+                    <div class="condition-item">
+                        <h5 class="regular-text">humidity</h5>
+                        <h5 class="humidity-value-text">55%</h5>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm">
-                        <div class="card-header py-3">
-                            <h4 class="my-0 fw-normal">Pro</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$15<small
-                                    class="text-body-secondary fw-light">/mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>20 users included</li>
-                                <li>10 GB of storage</li>
-                                <li>Priority email support</li>
-                                <li>Help center access</li>
-                            </ul> <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 text-bg-primary border-primary">
-                            <h4 class="my-0 fw-normal">Enterprise</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$29<small
-                                    class="text-body-secondary fw-light">/mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>30 users included</li>
-                                <li>15 GB of storage</li>
-                                <li>Phone and email support</li>
-                                <li>Help center access</li>
-                            </ul> <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-                        </div>
+
+                <div class="condition-info">
+                    <img src="img/airIcon.png" alt="" style="width: 30px;">
+                    <div class="condition-item">
+                        <h5 class="regular-text">Wind Speed</h5>
+                        <h5 class="wind-value-text">2 m/s</h5>
                     </div>
                 </div>
             </div>
-            <h2 class="display-6 text-center mb-4">Weather Update OF Other Areas</h2>
-            <div class="table-responsive">
-                <table class="table text-center">
-                    <thead>
-                        <tr>
-                            <th style="width: 34%;"></th>
-                            <th style="width: 22%;">Free</th>
-                            <th style="width: 22%;">Pro</th>
-                            <th style="width: 22%;">Enterprise</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="text-start">Makkah</th>
-                            <td></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Beijing</th>
-                            <td></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Melbourne</th>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Rome</th>
-                            <td></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="text-start">London</th>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Skardu</th>
-                            <td></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Yakutsk</th>
-                            <td></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">New York</th>
-                            <td></td>
-                            <td></td>
-                            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included">
-                                    <use xlink:href="#check"></use>
-                                </svg></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="forecast-item-container">
+                <div class="forecast-item">
+                    <h5 class="forecast-item-date regular-text">10 nov</h5>
+                    <img src="img/thunder strom.png" alt="" class="forecast-item-img">
+                    <h5 class="forecast-item-temp">29℃</h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-item-date regular-text">10 nov</h5>
+                    <img src="img/thunder strom.png" alt="" class="forecast-item-img">
+                    <h5 class="forecast-item-temp">29℃</h5>
+                </div><div class="forecast-item">
+                    <h5 class="forecast-item-date regular-text">10 nov</h5>
+                    <img src="img/thunder strom.png" alt="" class="forecast-item-img">
+                    <h5 class="forecast-item-temp">29℃</h5>
+                </div><div class="forecast-item">
+                    <h5 class="forecast-item-date regular-text">10 nov</h5>
+                    <img src="img/thunder strom.png" alt="" class="forecast-item-img">
+                    <h5 class="forecast-item-temp">29℃</h5>
+                </div>
             </div>
-        </main>
-    </div>
+        </section>
+        <section class="search-city section-message" >
+            <img  src="img/searchImage-removebg-preview.png" alt="">
+            <div>
+                <h1>Search City</h1>
+                <h4 class="regular-text">
+                    Find out the Weather condition of the city
+                </h4>
+            </div>
+        </section> 
+           <section class="not-found section-message" style="display: none;">
+            <img  src="img/error-removebg-preview.png" alt="">
+            <div>
+                <h1 style="font-weight: 400;">City not founded!</h1>
+                <h4 class="regular-text">
+                    Find out the Weather condition of an other city
+                </h4>
+            </div>
+        </section>
+    </main>
 
-    <script src="script.js"></script>
+
+   
 </body>
 
 </html>
