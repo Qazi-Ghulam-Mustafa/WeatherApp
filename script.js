@@ -126,7 +126,7 @@ function updateForecastItems(weatherData) {
 
 function showDisplaySection(section) {
     [weatherInfoSection, searchFoundSection, notFoundSection].forEach(
-        s => (s.style.display = 'none')
+        section => section.style.display = 'none'
     );
     section.style.display = 'flex';
 }
